@@ -49,7 +49,31 @@ body{
 
 
 
-      /*---------------------------Header---------------------------*/
+      /*---------------------------navbar---------------------------*/
+/* Navbar item padding and capitalized text */
+.custom-nav-items .nav-link {
+    padding: 10px 20px;  /* Add padding for better spacing */
+    text-transform: uppercase;  /* Make text uppercase */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Additional styling for the collapsed navbar modal */
+.custom-navbar .navbar-toggler {
+    border: 2px solid #fff;  /* Add a white border to the toggler button */
+    background-color: transparent;  /* Make the toggler button transparent */
+}
+
+.custom-navbar .collapse {
+    background-color: #333; /* Change background color of the collapsed navbar */
+}
+
+.custom-navbar .navbar-nav {
+    padding-top: 10px;  /* Add some padding at the top when expanded */
+}
+
+.custom-navbar .nav-item {
+    margin-left: 10px;  /* Space out the navbar items a bit */
+}
 
 
 /*---------------------------HomePage--------------------------*/
@@ -162,6 +186,8 @@ profile-photo .img{
 
 .btn-group{
   margin: 45px 0;
+  width: 23%;
+  height: 20%;
 }
 .btn-group .btn{
   border-color: #d5d5d5;
@@ -266,43 +292,48 @@ profile-photo .img{
 
 
 /*-----------Projects-----------*/
-.project-content{
+.project-content {
   padding: 90px 0;
-  
 }
-.project-title{
+
+.project-title {
   margin-bottom: 60px;
   text-align: center;
 }
-.project-title h4{
+
+.project-title h4 {
   text-transform: uppercase;
   font-size: 40px;
   line-height: 40px;
-  color:#92d485;
+  color: #92d485;
   margin-bottom: 20px;
 }
-.project-title p{
+
+.project-title p {
   color: #e5e5e5;
 }
-.projects{
+
+.projects {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
-.project{
-   
-    color: #e5e5e5;
-    border: 2px solid #e5e5e5;
-    border-radius: 10px;
-    width: 100%;
-    position: relative;
-    padding: 25px;
-    text-align: center;
-    flex-basis: 32%;
-    transition: .3s;
+
+.project {
+  color: #e5e5e5;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  padding: 25px;
+  text-align: center;
+  flex-basis: 32%;
+  transition: 0.3s;
+  margin-bottom: 20px; /* Add some margin for better spacing between projects */
 }
-.project i{
-  background-color:#92d485;
+
+.project i {
+  background-color: #92d485;
   width: 60px;
   height: 60px;
   color: #333;
@@ -310,29 +341,33 @@ profile-photo .img{
   line-height: 60px;
   border-radius: 50%;
 }
-.project h4{
+
+.project h4 {
   font-size: 26px;
   text-transform: capitalize;
   margin: 20px 0;
 }
-.project p{
+
+.project p {
   text-align: justify;
 }
-.project:hover{
-  border-color:#92d485;
+
+.project:hover {
+  border-color: #92d485;
 }
 
-
 .github-box {
-  text-align: center;
-  margin: 20px;
+  display: flex; /* Use flexbox to align icons in a row */
+  justify-content: center; /* Center the icons horizontally */
+  gap: 10px; /* Add space between the GitHub icons */
+  margin-top: 10px;
 }
 
 .git-link {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: white; 
+  color: white;
   font-size: 16px;
   transition: color 0.3s ease;
 }
@@ -343,13 +378,31 @@ profile-photo .img{
 
 .git-link svg {
   margin-right: 5px;
-  fill: white; 
+  fill: white;
   transition: fill 0.3s ease;
 }
 
 .git-link:hover svg {
   fill: green;
 }
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column; /* Stack projects vertically on smaller screens */
+    align-items: center; /* Center the projects */
+  }
+
+  .project {
+    flex-basis: 90%; /* Take up more width on small screens */
+    margin: 10px 0; /* Reduce space between projects */
+  }
+
+  .github-box {
+    justify-content: flex-start; /* Align the GitHub icons to the left on small screens */
+  }
+}
+
 
 
 
@@ -631,28 +684,43 @@ profile-photo .img{
    
 </style>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark custom-navbar">
     <div class="container-fluid">
       
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <!-- Toggler aligned to the right -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Content of the navbar (links) aligned to the right -->
       <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav ms-auto custom-nav-items"> <!-- Custom class for nav items -->
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Link</a>
+            <a class="nav-link" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Link</a>
+            <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">contact</a>
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
-        
       </div>
     </div>
-  </nav>
+</nav>
+
+
+
+
  
     <!---- Home Page -------->
     <div class="FirstElement" id="home">
@@ -667,10 +735,10 @@ profile-photo .img{
                 I'm a passionate PYTHON full-stack Web Developer with a strong desire to create innovative solutions and push the boundaries of technology. With a deep love for coding and problem-solving, I thrive on building dynamic and efficient web applications.
                 
                 </p>
-            <div class="btn-group">
-                <a href="../static/images/alma cv.pdf" class="btn   active">Download CV</a>
+                <div class="btn-group">
+                  <a href="../static/images/alma cv.pdf" class="btn btn-sm btn-primary active">Download CV</a>
+              </div>
               
-            </div>
             <div class="social">
                 <a href="https://github.com/AlmaJacob"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/alma-jacob-917b4a348/"><i class="fa-brands fa-linkedin"></i></a>
@@ -779,15 +847,11 @@ profile-photo .img{
                                         Proficient PYTHON full-Stack Developer with a strong foundation in building web applications using python, django, React and flask Experienced in developing intuitive user interfaces, creating efficient backend APIs, and integrating databases.
                                         During my two-week internship, I applied my skills to real-world projects, enhancing my proficiency in full-stack development. This experience allowed me to
                                         <br><br>
-                                        <li class="timeline-text"> Collaborate on dynamic applications with robust functionality.
-                                        </li>
                                        
-                                        <li class="timeline-text">
-                                        Gain practical exposure to the software development lifecycle.
-                                        </li>
-                                        <li class="timeline-text">
-                                        Strengthen my problem-solving and teamwork abilities.
-                                    </li> 
+                                       
+                                        <p>* Gain practical exposure to the software development lifecycle.</p>
+                                        
+                                        <p>* Strengthen my problem-solving and teamwork abilities.</p> 
                                     
                   </div> 
                     </div>
@@ -806,82 +870,62 @@ profile-photo .img{
                 <p>Discover my projects, where creativity meets innovation</p>
             </div>
             <div class="projects">
-                <!--Project 1 -->
-                <div class="project">
-                  <img src="../static/images/FEMI.png" alt="profile picture">
-                    <h4>Femiglam Cosmetic-Shop</h4>
-                    <p> These cosmetics shop e-commerce application is an online platform designed to help users browse, discover, and purchase beauty and skincare products conveniently from their devices. The application typically features a wide variety of cosmetics, ranging from makeup and skincare to haircare.</p><br>
-                        <div class="github-box">
-                             <br><br><br>
-                            <a href="https://github.com/AlmaJacob/Femiglam" target="_blank" class="git-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
-                                  </svg></i> GitHub
-                            </a>
-                        </div>
-
-                </div>
-                 <!--Project 2 -->
-                 <div class="project">
-                  <img src="../static/images/book.png">
-                    <h4>Book My Show</h4>
-                    <p> BookMyShow is a popular entertainment and ticketing application that allows users to book tickets for movies, events, plays, concerts, sports, and more, all through an easy-to-use platform. It's designed to streamline the booking process for entertainment enthusiasts,these is a clone website of BookMyShow app
-                        </p>
-                        <br><br><br><br><br>
-                        <div class="github-box">
-                          
-                            <br><br><br><br>
-                            <a href="https://github.com/AlmaJacob/bookmyshow_clone" target="_blank" class="git-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
-                                  </svg></i> GitHub
-                            </a>
-                        </div>
- 
-                </div>
-                <!--Project 3-->
-                <div class="project">
-                  <img src="../static/images/puma.png">
-                    <h4>PUMA-ecommerce</h4>
-                    <p> 
-                      The PUMA app is a mobile application designed to offer users a seamless shopping experience for PUMA’s wide range of athletic wear, footwear, and accessories. It brings the brand’s signature sports performance gear and streetwear fashion,these is a clone website of PUMA app                    </p>
-                        <br><br><br><br>
-                        <div class="github-box">
-                         
-                            <br><br><br><br>
-                            <a href="https://github.com/AlmaJacob/puma-clone" target="_blank" class="git-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
-                                  </svg>
-                                GitHub
-                            </a>
-                        </div>
-                </div>
-                
- <!--  Project 4 -->
- <div class="project">
- 
-<img src="../static/images/chempakam.png">
-
-    <h4>chempakam-clothing store</h4> 
-    <p> 
-      A clothing store for ladies, girls, and children is a retail shop that offers a wide variety of apparel and accessories specifically designed for women, young girls, and children of different age groups. These stores cater to various styles, preferences, and occasions, providing fashion-forward yet comfortable options for every member of the family. Whether shopping for everyday wear, formal events, or seasonal outfits, this type of store ensures that both style and comfort are a priority for all ages.
-        </p>
-<br>
-        <div class="github-box">
-<br><br>
-            <a href="https://github.com/AlmaJacob/chempakam-clone" target="_blank" class="git-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
-                  </svg> GitHub
-            </a>
-        </div>
-
+  <!-- Project 1 -->
+<div class="project">
+  <img src="../static/images/FEMI.png" alt="profile picture">
+  <h4>Femiglam Cosmetic-Shop</h4>
+  <p> These cosmetics shop e-commerce application is an online platform designed to help users browse, discover, and purchase beauty and skincare products conveniently from their devices. The application typically features a wide variety of cosmetics, ranging from makeup and skincare to haircare.</p><br>
+  <div class="github-box">
+    <a href="https://github.com/AlmaJacob/Femiglam" target="_blank" class="git-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
+      </svg> GitHub
+    </a>
+  </div>
 </div>
 
-            </div>
-        </div>
-    </section>
+<!-- Project 2 -->
+<div class="project">
+  <img src="../static/images/book.png">
+  <h4>Book My Show</h4>
+  <p> BookMyShow is a popular entertainment and ticketing application that allows users to book tickets for movies, events, plays, concerts, sports, and more, all through an easy-to-use platform. It's designed to streamline the booking process for entertainment enthusiasts, this is a clone website of the BookMyShow app</p>
+  <div class="github-box">
+    <a href="https://github.com/AlmaJacob/bookmyshow_clone" target="_blank" class="git-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
+      </svg> GitHub
+    </a>
+  </div>
+</div>
+
+<!-- Project 3 -->
+<div class="project">
+  <img src="../static/images/puma.png">
+  <h4>PUMA-ecommerce</h4>
+  <p>The PUMA app is a mobile application designed to offer users a seamless shopping experience for PUMA’s wide range of athletic wear, footwear, and accessories. It brings the brand’s signature sports performance gear and streetwear fashion, this is a clone website of the PUMA app</p>
+  <div class="github-box">
+    <a href="https://github.com/AlmaJacob/puma-clone" target="_blank" class="git-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
+      </svg> GitHub
+    </a>
+  </div>
+</div>
+
+<!-- Project 4 -->
+<div class="project">
+  <img src="../static/images/chempakam.png">
+  <h4>chempakam-clothing store</h4>
+  <p>A clothing store for ladies, girls, and children is a retail shop that offers a wide variety of apparel and accessories specifically designed for women, young girls, and children of different age groups. These stores cater to various styles, preferences, and occasions, providing fashion-forward yet comfortable options for every member of the family. Whether shopping for everyday wear, formal events, or seasonal outfits, this type of store ensures that both style and comfort are a priority for all ages.</p><br>
+  <div class="github-box">
+    <a href="https://github.com/AlmaJacob/chempakam-clone" target="_blank" class="git-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.18.55-.4v-1.48c-2.22.48-2.68-.9-2.68-.9-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.49.05-.49.8 0 1.2.82 1.2.82.71 1.2 1.88.86 2.34.66.07-.52.28-.86.51-1.06-1.77-.2-3.63-.89-3.63-3.94 0-.87.31-1.58.82-2.14-.08-.2-.36-.99.08-2.06 0 0 .68-.22 2.2.82.64-.18 1.33-.27 2-.27s1.36.09 2 .27c1.52-1.04 2.2-.82 2.2-.82.43 1.07.17 1.86.08 2.06.51.56.82 1.27.82 2.14 0 3.06-1.86 3.74-3.63 3.94.23.2.44.58.44 1.17v1.73c0 .23.15.47.55.4C13.71 14.54 16 11.54 16 8c0-4.42-3.58-8-8-8z" fill="#ffff"/>
+      </svg> GitHub
+    </a>
+  </div>
+</div>
+
 
    
 
